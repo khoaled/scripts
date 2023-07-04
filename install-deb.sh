@@ -11,7 +11,11 @@ apps="gnome-tweaks
     plymouth-themes
     gnome-shell-extensions
     gnome-shell-extensions-extra
-    gnome-tweaks"
+    gnome-tweaks
+    gnome-software
+    fwupd
+    git
+    rsync"
 
 if [ ! /usr/sbin/gdm3 ]
 then
@@ -23,6 +27,10 @@ then
 
     read -p "Installing $apps"
     apt install -y $apps
+
+    read -p "Cleaning up" -t 2
+    systemctl enable gdm3 cups
+    sed - 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 else
     read -p "Everything's installed  " -t 2
