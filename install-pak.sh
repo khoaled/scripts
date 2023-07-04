@@ -17,10 +17,10 @@ paks="org.mozilla.firefox
       org.gnome.clocks"
 
 
-if [ ! /usr/bin/flatpak ]
+if [ /usr/bin/flatpak ]
 then
     read -p "Installing flatpak and the flatpak repo" -t 2
-    sudo apt install -y flatpak
+    sudo apt install -y flatpak gnome-software-plugin-flatpak
     sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
     read -p"Installing flatpaks" -t 2
