@@ -11,6 +11,7 @@ then
 
   read -p "backing up $hpath" -t 2
   borg create --verbose --stats $rpath::backup-$(date +%F) $hpath
+  
 else
   read -p "borg isn't installed." -t 2
 fi
