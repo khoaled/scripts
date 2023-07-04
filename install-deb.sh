@@ -18,7 +18,7 @@ apps="gnome-tweaks
     git
     rsync"
 
-if [ ! /usr/sbin/gdm3 ]
+if [ /usr/sbin/gdm3 ]
 then
     read -p "Repo Update" -t 2
     apt update
