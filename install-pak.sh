@@ -23,7 +23,7 @@ then
     sudo apt install -y flatpak gnome-software-plugin-flatpak
     sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-    read -p"Installing flatpaks" -t 2
+    read -p "Installing flatpaks" -t 2
     flatpak install -y $paks
 
 else
