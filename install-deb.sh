@@ -26,12 +26,12 @@ then
     read -p "Installing $gs" -t 2
     apt install -y --no-install-recommends $gs
 
-    read -p "Installing $apps"
+    read -p "Installing $apps" -t 2
     apt install -y $apps
 
     read -p "Cleaning up" -t 2
     systemctl enable gdm3 cups
-    sed - 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
+    sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 else
     read -p "Everything's installed  " -t 2
