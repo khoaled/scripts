@@ -4,7 +4,7 @@
 hpath="/home/micah"
 rpath="/media/micah/micah/backups"
 
-if [ /usr/bin/borg ]
+if [ -x /usr/bin/borg ]
 then
   read -p "listing backups in the repo" -t 2
   borg list $rpath
