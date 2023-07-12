@@ -2,7 +2,7 @@
 
 expert install
 
-umount /target/boot/efi
+`umount /target/boot/efi`
 
 umount /target
 
