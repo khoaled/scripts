@@ -21,15 +21,19 @@ apps="gnome-tweaks
 if [ ! -x /usr/sbin/gdm3 ]
 then
     read -p "Repo Update" -t 2
+    echo -e "\n"
     apt update
 
     read -p "Installing $gs" -t 2
+    echo -e "\n"
     apt install -y --no-install-recommends $gs
 
     read -p "Installing $apps" -t 2
+    echo -e "\n"
     apt install -y $apps
 
     read -p "Cleaning up" -t 2
+    echo -e "\n"
     systemctl enable gdm3 cups
     sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
