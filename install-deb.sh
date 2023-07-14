@@ -14,6 +14,8 @@ apps="gnome-tweaks
     gnome-shell-extensions-extra
     gnome-tweaks
     gnome-software
+    gnome-system-monitor
+    gnome-disk-utility
     fwupd
     git
     rsync"
