@@ -11,6 +11,7 @@ paks="org.mozilla.firefox
       com.mojang.Minecraft
       org.libreoffice.LibreOffice
       com.raggesilver.BlackBox
+      com.mattjakeman.ExtensionManager
       org.gnome.eog
       org.gnome.Weather
       org.gnome.Calculator
