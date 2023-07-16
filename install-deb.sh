@@ -10,12 +10,13 @@ apps="gnome-tweaks
     nautilus
     plymouth
     plymouth-themes
-    gnome-shell-extensions
-    gnome-shell-extensions-extra
     gnome-tweaks
     gnome-software
     gnome-system-monitor
     gnome-disk-utility
+    gnome-software
+    gnome-software-plugin-flatpak
+    flatpak
     fwupd
     git
     rsync"
@@ -37,6 +38,7 @@ then
     read -p "Cleaning up" -t 2
     echo -e "\n"
     systemctl enable gdm3 cups
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 else
