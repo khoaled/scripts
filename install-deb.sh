@@ -10,8 +10,6 @@ apps="gnome-tweaks
     nautilus
     plymouth
     plymouth-themes
-    gnome-shell-extensions
-    gnome-shell-extensions-extra
     gnome-tweaks
     gnome-software
     gnome-system-monitor
