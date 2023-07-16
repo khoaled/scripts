@@ -29,3 +29,6 @@ nano /target/etc/fstab
 
     change subvol to subvolid=  x3
 ```
+
+```
+nvme.noacpi=1 mem_sleep_default=deep
