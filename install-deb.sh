@@ -14,12 +14,13 @@ apps="gnome-tweaks
     gnome-software
     gnome-system-monitor
     gnome-disk-utility
+    flatpak
     gnome-software
     gnome-software-plugin-flatpak
-    flatpak
     fwupd
     git
-    rsync"
+    rsync
+    borgbackup"
 
 if [ ! -x /usr/sbin/gdm3 ]
 then
