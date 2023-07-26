@@ -31,4 +31,4 @@ nano /target/etc/fstab
 ```
 
 ```
-nvme.noacpi=1 mem_sleep_default=deep
+nvme.noacpi=1 mem_sleep_default=deep acpi_osi='!Windows 2020'
