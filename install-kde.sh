@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# This is for a very minimal install of KDE Plasma on Debian.
+# This is for a minimal install of KDE Plasma on Debian.
 #
 ksd="kde-plasma-desktop"
 apps="sddm
