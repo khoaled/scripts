@@ -8,8 +8,6 @@ apps="sddm
     plasma-pa
     plasma-nm
     plasma-discover
-    plasma-discover-backend-flatpak
-    flatpak
     fwupd
     network-manager
     plymouth
