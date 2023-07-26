@@ -27,7 +27,7 @@ kpaks="org.mozilla.firefox
       org.libreoffice.LibreOffice
       com.raggesilver.BlackBox"
  
-if [ ! -x /usr/bin/flatpak ] && [ -x /usr/bin/gdm ]
+if [ ! -x /usr/bin/flatpak ] && [ -x /usr/sbin/gdm3 ]
 then
     read -p "Installing flatpak and the flatpak repo" -t 2
     echo -e "\n"
@@ -37,11 +37,11 @@ then
     read -p "Installing flatpaks" -t 2
     echo -e "\n"
     flatpak install -y $gpaks
-elif [ ! -x /usr/bin/flatpak ] && [ -x /usr/bin/sddm ] 
+elif [ ! -x /usr/bin/flatpak ] && [ -x /usr/sbin/sddm ] 
 then
     read -p "Installing flatpak and the flatpak repo" -t 2
     echo -e "\n"
-    sudo apt install -y flatpak 
+    sudo apt install -y flatpak plasma-discover-backend-flatpak
     sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
     read -p "Installing flatpaks" -t 2
