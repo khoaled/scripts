@@ -36,7 +36,7 @@ then
 
     read -p "Installing flatpaks" -t 2
     echo -e "\n"
-    flatpak install -y $gpaks
+    sudo flatpak install -y $gpaks
 elif [ ! -x /usr/bin/flatpak ] && [ -x /usr/sbin/sddm ] 
 then
     read -p "Installing flatpak and the flatpak repo" -t 2
@@ -46,10 +46,9 @@ then
 
     read -p "Installing flatpaks" -t 2
     echo -e "\n"
-    flatpak install -y $kpaks
+    sudo flatpak install -y $kpaks
     
 else
-    read -p "Installing flatpaks" -t 2
+    read -p "Done" -t 2
     echo -e "\n"
-    flatpak install -y $paks
 fi
