@@ -2,7 +2,7 @@
 #
 #
 hpath="/home/micah"
-rpath="/media/micah/micah/backups"
+rpath="/run/media/micah/micah/backups"
 
 if [ -x /usr/bin/borg ]
 then
