@@ -1,0 +1,8 @@
+[Unit]
+Description=Run backup
+
+[Service]
+ExecStart=/bin/bash /home/micah/scripts/backup.sh
+
+[Install]
+WantedBy=default.target
