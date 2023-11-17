@@ -12,7 +12,6 @@ paks="org.mozilla.firefox
       com.visualstudio.code
       com.mojang.Minecraft
       org.libreoffice.LibreOffice
-      com.raggesilver.BlackBox
       org.gnome.eog"
 
 
