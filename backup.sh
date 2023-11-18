@@ -12,7 +12,7 @@ then
 
   read -p "backing up $hpath" -t 2
   echo -e "\n"
-  borg create --verbose --stats $rpath::backup-$(date +%F) $hpath
+  borg create --progress $rpath::backup-$(date +%F) $hpath
   
 else
   read -p "borg isn't installed." -t 2
