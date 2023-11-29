@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# This is for a very minimal install of Gnome on ArchLinux.
+# This is for a very minimal install of KDE Plasma on ArchLinux.
 #
 nope="--noconfirm"
 
