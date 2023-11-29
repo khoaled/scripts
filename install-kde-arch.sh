@@ -51,7 +51,7 @@ then
     read -p "Cleaning up" -t 2
     echo -e "\n"
     # enabling services
-    systemctl enable lightdm cups acpid avahi-daemon thermald acpid firewalld
+    systemctl enable lightdm cups acpid avahi-daemon thermald firewalld
     # editing /boot/loader/loader.conf & /etc/mkinitcpio.conf
     sed -i 's/3/0/g' /boot/loader/loader.conf
     sed -i 's/fsck/fsck plymouth/g' /etc/mkinitcpio.conf
