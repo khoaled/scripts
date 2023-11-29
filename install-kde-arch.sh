@@ -26,6 +26,7 @@ kde="acpi
     nano
     packagekit-qt5
     plasma-desktop
+    breeze-gtk
     plasma-disks
     plasma-firewall
     plasma-nm
