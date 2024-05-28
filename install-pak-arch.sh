@@ -5,14 +5,12 @@
 nope="--noconfirm"
 
 paks="org.mozilla.firefox
-      org.chromium.Chromium
-      com.microsoft.Edge
+      com.google.Chrome
       com.spotify.Client
       com.bitwarden.desktop
       com.visualstudio.code
       com.mojang.Minecraft
-      org.libreoffice.LibreOffice
-      org.gnome.eog"
+      org.libreoffice.LibreOffice"
 
 
 
