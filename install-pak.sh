@@ -5,6 +5,7 @@
 gpaks="org.mozilla.firefox
       com.google.Chrome
       com.spotify.Client
+      org.gnome.World.PikaBackup
       com.bitwarden.desktop
       com.visualstudio.code
       com.mojang.Minecraft
