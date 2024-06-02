@@ -1,0 +1,88 @@
+- name: Install Gnome Desktop
+  hosts: localhost
+  become: true
+  tasks:
+    - name: System Update 
+      community.general.pacman:
+         update_cache: true
+         upgrade: true
+
+    - name: Gnome Desktop
+      community.general.pacman:
+        name:
+          - gnome-shell
+          - xorg-server
+          - xorg-xwayland
+          - networkmanager
+          - acpi
+          - acpid
+          - gnome-tweaks
+          - gnome-control-center
+          - gdm
+          - cups
+          - cups-browsed
+          - nautilus
+          - gvfs-smb
+          - gvfs-nfs
+          - nfs-utils
+          - xdg-desktop-portal
+          - xdg-desktop-portal-gnome
+          - xdg-desktop-portal-gtk
+          - power-profiles-daemon
+          - plymouth
+          - gnome-tweaks
+          - gnome-software
+          - gnome-system-monitor
+          - gnome-disk-utility
+          - fwupd
+          - flatpak
+        state: present
+
+    - name: Other Utils
+      community.general.pacman:
+        name:
+          - git
+          - rsync
+          - borg
+        state: present
+
+    - name: Add the flathub flatpak repository
+      community.general.flatpak_remote:
+        name: flathub
+        state: present
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+
+    - name: Install Flatpaks
+      community.general.flatpak:
+        name:
+          - org.mozilla.firefox
+          - com.google.Chrome
+          - com.spotify.Client
+          - org.gnome.World.PikaBackup
+          - com.bitwarden.desktop
+          - com.visualstudio.code
+          - com.mojang.Minecraft
+          - org.libreoffice.LibreOffice
+          - com.mattjakeman.ExtensionManager
+
+    - name: Start Cups
+      ansible.builtin.systemd_service:
+        enabled: true
+        name: cups
+
+    - name: Start Acpid    
+      ansible.builtin.systemd_service:
+        enabled: true
+        name: acpid
+
+    - name: Start Avahi-Daemon    
+      ansible.builtin.systemd_service:
+        enabled: true
+        name: avahi-daemon
+
+    - name: Start GDM    
+      ansible.builtin.systemd_service:
+        enabled: true
+        name: gdm
+
+
