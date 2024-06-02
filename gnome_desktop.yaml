@@ -1,0 +1,62 @@
+- name: Install Gnome Desktop
+  hosts: localhost
+  become: true
+  tasks:
+    - name: Update APT Package Cache
+      apt: update_cache=yes
+
+    - name: Gnome Desktop
+      apt:
+        name:
+          - gnome-core
+          - gdm3
+          - firmware-linux-nonfree
+          - gnome-control-center
+          - gnome-tweaks
+          - cups
+          - nautilus
+          - plymouth
+          - plymouth-themes
+          - gnome-tweaks
+          - gnome-software
+          - gnome-system-monitor
+          - gnome-disk-utility
+          - flatpak
+          - fwupd
+          - gnome-software-plugin-flatpak
+          - network-manager
+        state: present
+
+    - name: Other Utils
+      apt:
+        name:
+          - git
+          - rsync
+          - borgbackup
+        state: present
+
+    - name: Add the flathub flatpak repository
+      community.general.flatpak_remote:
+        name: flathub
+        state: present
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+
+    - name: Install Flatpaks
+      community.general.flatpak:
+        name:
+          - org.mozilla.firefox
+          - com.google.Chrome
+          - com.spotify.Client
+          - org.gnome.World.PikaBackup
+          - com.bitwarden.desktop
+          - com.visualstudio.code
+          - com.mojang.Minecraft
+          - org.libreoffice.LibreOffice
+          - com.mattjakeman.ExtensionManager
+
+    - name: update networkmanager.conf
+      ansible.builtin.replace:
+        path: /etc/NetworkManager/NetworkManager.conf
+        regexp: 'false'
+        replace: 'true'
+
