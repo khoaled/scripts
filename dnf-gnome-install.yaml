@@ -27,6 +27,9 @@
         - plymouth-system-theme
         - plymouth-theme-spinner
         - flatpak
+        - git
+        - rsync
+        - borgbackup
 
   - name: Add the flathub flatpak repository
     community.general.flatpak_remote:
