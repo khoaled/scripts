@@ -30,6 +30,7 @@
         - git
         - rsync
         - borgbackup
+        - openssh
 
   - name: Add the flathub flatpak repository
     community.general.flatpak_remote:
@@ -50,6 +51,11 @@
         - org.libreoffice.LibreOffice
         - com.mattjakeman.ExtensionManager
 
+  - name: Remove OpenSSH server
+    ansible.builtin.systemd_service:
+      name: openssh-server
+      state: absent
+      
   - name: Disable default
     ansible.builtin.systemd_service:
       name: default.target
