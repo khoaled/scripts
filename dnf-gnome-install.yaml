@@ -1,0 +1,36 @@
+---
+
+- hosts: localhost
+  become: true
+  tasks:
+
+  - name: DNF Update
+    dnf:
+      name: "*"
+      state: latest
+
+  - name: Install Gnome and Applications
+    dnf:
+      state: latest
+      name:
+        - gnome-shell
+        - gnome-terminal
+        - gnome-tweaks
+        - gnome-software
+        - nautilus
+        - gvfs-smb
+        - gvfs-nfs
+        - nfs-utils
+        - plymouth
+        - plymouth-system-theme
+        - plymouth-theme-spinner
+
+  - name: Disable default
+    ansible.builtin.systemd_service:
+      name: default.target
+      enabled: false
+
+  - name: Enable desktop
+    ansible.builtin.systemd_service:
+      name: graphical.target
+      enabled: true
