@@ -1,0 +1,78 @@
+---
+
+- hosts: localhost
+  become: true
+  tasks:
+
+  - name: Remove unneeded apps
+    dnf:
+      state: absent
+      name:
+        - '@Container Management'
+        - '@Guest Desktop Agents'
+        - '@LibreOffice'
+        - libreoffice
+        - libreoffice-base
+        - libreoffice-calc
+        - libreoffice-core
+        - libreoffice-data
+        - libreoffice-draw
+        - virtualbox-guest-additions
+        - nvidia-gpu-firmware
+        - gnome-shell-extension-background-logo
+        - rhythmbox
+        - gnome-boxes
+        - cheese
+        - gnome-clocks
+        - gnome-maps
+        - gnome-photos
+        - gnome-remote-desktop
+        - gnome-calculator
+        - gnome-weather
+        - gnome-calendar
+        - gnome-contacts
+        - gnome-abrt
+        - gnome-text-editor
+        - snapshot
+        - simple-scan
+        - totem
+        - firefox
+        - loupe
+        - evince
+        
+  - name: Remove unneeded dependencies
+    dnf:
+      autoremove: yes
+    
+  - name: Add wanted apps
+    dnf:
+      state: latest
+      name:
+        - borgbackup
+        - gnome-tweaks
+        - rsync
+
+  - name: Add the flathub flatpak repository
+    community.general.flatpak_remote:
+      name: flathub
+      state: present
+      flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+
+  - name: Install Flatpaks
+    community.general.flatpak:
+      name:
+        - org.mozilla.firefox
+        - com.google.Chrome
+        - com.spotify.Client
+        - org.gnome.World.PikaBackup
+        - com.bitwarden.desktop
+        - com.visualstudio.code
+        - com.mojang.Minecraft
+        - org.libreoffice.LibreOffice
+        - com.mattjakeman.ExtensionManager
+
+  - name: DNF Update
+    dnf:
+      name: "*"
+      state: latest
+
