@@ -25,7 +25,7 @@
         - nfs-utils
         - plymouth
         - plymouth-system-theme
-        - plymouth-theme-spinner
+        - plymouth-theme-spinfinity
         - flatpak
         - git
         - rsync
