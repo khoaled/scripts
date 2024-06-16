@@ -11,6 +11,11 @@
         - '@Container Management'
         - '@Guest Desktop Agents'
         - '@LibreOffice'
+        - qemu-user-static
+        - containers-common
+        - containers-common-extra
+        - aardvark-dns
+        - netavark
         - libreoffice
         - libreoffice-base
         - libreoffice-calc
@@ -72,6 +77,7 @@
         - com.mattjakeman.ExtensionManager
         - org.gnome.Calculator
         - org.videolan.VLC
+        - org.gnome.gedit
 
   - name: DNF Update
     dnf:
