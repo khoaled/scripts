@@ -11,6 +11,7 @@
         - '@Container Management'
         - '@Guest Desktop Agents'
         - '@LibreOffice'
+        - qemu-guest-agent
         - qemu-user-static
         - containers-common
         - containers-common-extra
