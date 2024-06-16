@@ -70,6 +70,8 @@
         - com.mojang.Minecraft
         - org.libreoffice.LibreOffice
         - com.mattjakeman.ExtensionManager
+        - org.gnome.Calculator
+        - org.videolan.VLC
 
   - name: DNF Update
     dnf:
