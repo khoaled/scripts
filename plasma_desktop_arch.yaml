@@ -1,4 +1,4 @@
-  - name: Install Plasma Desktop
+- name: Install Gnome Desktop
   hosts: localhost
   become: true
   tasks:
@@ -10,48 +10,42 @@
     - name: Gnome Desktop
       community.general.pacman:
         name:
+          - gnome-shell
+          - xorg-server
+          - xorg-xwayland
+          - networkmanager
           - acpi
           - acpid
-          - avahi
-          - ark
-          - borg
+          - gnome-tweaks
+          - gnome-control-center
+          - gdm
           - cups
           - cups-browsed
-          - discover
-          - dolphin
-          - firewalld
-          - flatpak
-          - fwupd
-          - fwupd-efi
-          - kde-gtk-config
-          - kdeplasma-addons
-          - kinfocenter
-          - konsole
-          - kscreen
-          - sddm
-          - nano
-          - packagekit-qt5
-          - packagekit-qt6
-          - plasma-desktop
-          - breeze-gtk
-          - plasma-disks
-          - plasma-firewall
-          - plasma-nm
-          - plasma-pa
-          - plasma-systemmonitor
-          - plasma-wayland-protocols
-          - plasma-wayland-session
-          - plymouth
-          - reflector
-          - system-config-printer
-          - thermald
-          - xdg-desktop-portal-kde
+          - nautilus
+          - gvfs-smb
+          - gvfs-nfs
+          - nfs-utils
           - xdg-user-dirs
+          - xdg-user-dirs-gtk
+          - xdg-desktop-portal
+          - xdg-desktop-portal-gnome
+          - xdg-desktop-portal-gtk
+          - power-profiles-daemon
+          - plymouth
+          - gnome-tweaks
+          - gnome-software
+          - gnome-system-monitor
+          - gnome-disk-utility
+          - packagekit
+          - gnome-packagekit
+          - fwupd
+          - gnome-firmware
+          - reflector
           - git
           - rsync
           - borg
         state: present
-    
+
     - name: Add the flathub flatpak repository
       community.general.flatpak_remote:
         name: flathub
@@ -65,6 +59,7 @@
           - com.google.Chrome
           - com.spotify.Client
           - org.gnome.World.PikaBackup
+          - org.gnome.gedit
           - com.bitwarden.desktop
           - com.visualstudio.code
           - com.mojang.Minecraft
@@ -76,19 +71,19 @@
         enabled: true
         name: cups
 
-    - name: Start FirewallD    
+    - name: Start Acpid    
       ansible.builtin.systemd_service:
         enabled: true
-        name: firewalld
+        name: acpid
 
     - name: Start Avahi-Daemon    
       ansible.builtin.systemd_service:
         enabled: true
         name: avahi-daemon
 
-    - name: Start SDDM
+    - name: Start GDM    
       ansible.builtin.systemd_service:
         enabled: true
-        name: sddm
+        name: gdm
 
 
