@@ -7,43 +7,38 @@
          update_cache: true
          upgrade: true
 
-    - name: Gnome Desktop
+    - name: Plasma Desktop
       community.general.pacman:
         name:
-          - gnome-shell
+          - plasma-desktop
           - xorg-server
           - xorg-xwayland
+          - sddm
+          - avahi
+          - plasma-wayland-protocols
+          - firewalld
+          - plasma-firewall
+          - plasma-nm
+          - konsole
+          - dolphin
+          - plasma-systemmonitor
+          - discover
           - networkmanager
           - acpi
           - acpid
-          - gnome-tweaks
-          - gnome-control-center
-          - gdm
           - cups
           - cups-browsed
-          - nautilus
-          - gvfs-smb
-          - gvfs-nfs
           - nfs-utils
           - xdg-user-dirs
-          - xdg-user-dirs-gtk
           - xdg-desktop-portal
-          - xdg-desktop-portal-gnome
-          - xdg-desktop-portal-gtk
-          - power-profiles-daemon
           - plymouth
-          - gnome-tweaks
-          - gnome-software
-          - gnome-system-monitor
-          - gnome-disk-utility
           - packagekit
-          - gnome-packagekit
           - fwupd
-          - gnome-firmware
           - reflector
           - git
           - rsync
           - borg
+          - flatpak
         state: present
 
     - name: Add the flathub flatpak repository
@@ -64,7 +59,6 @@
           - com.visualstudio.code
           - com.mojang.Minecraft
           - org.libreoffice.LibreOffice
-          - com.mattjakeman.ExtensionManager
 
     - name: Start Cups
       ansible.builtin.systemd_service:
@@ -81,9 +75,7 @@
         enabled: true
         name: avahi-daemon
 
-    - name: Start GDM    
+    - name: Start SDDM    
       ansible.builtin.systemd_service:
         enabled: true
-        name: gdm
-
-
+        name: sddm
