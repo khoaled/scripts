@@ -33,6 +33,8 @@
           - xdg-desktop-portal
           - plymouth
           - packagekit
+          - packagekit-qt5
+          - packagekit-qt6
           - fwupd
           - reflector
           - git
