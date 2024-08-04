@@ -20,6 +20,7 @@
           - firewalld
           - plasma-firewall
           - plasma-nm
+          - plasma-pa
           - kde-gtk-config
           - konsole
           - dolphin
