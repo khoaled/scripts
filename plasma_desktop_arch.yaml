@@ -19,6 +19,7 @@
           - firewalld
           - plasma-firewall
           - plasma-nm
+          - kde-gtk-config
           - konsole
           - dolphin
           - plasma-systemmonitor
