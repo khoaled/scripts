@@ -14,6 +14,7 @@
           - xorg-server
           - xorg-xwayland
           - sddm
+          - sddm-kcm
           - avahi
           - plasma-wayland-protocols
           - firewalld
